@@ -1,5 +1,5 @@
 package Observer;
 
 interface Observer {
-    void update(ConcreteSubject subject);
+    void update(Subject subject);
 }

@@ -15,5 +15,6 @@ interface Subject {
 
     //zmiana nazwy, notify jest metodą klasy Object w Javie
     void notifyObservers();
+    String getState();
 
 }
