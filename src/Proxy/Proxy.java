@@ -1,43 +1,28 @@
 package Proxy;
 
 public class Proxy {
-    Double a,b,c;
-    QuadraticFormulaResult result;
-    String saveSolution;
-
-    public Proxy(){    }
-
-    public void setFactors(Double a, Double b, Double c) {
-        this.a = a;
-        this.b = b;
-        this.c = c;
-    }
-
-    private boolean checkFactorEquality(Double a, Double b, Double c){
-        if(this.a.equals(a) && this.b.equals(b) && this.c.equals(c)){
-            return true;
-        }
-        return false;
-
-    }
-
-    String returnSaveSolution(){
-        return saveSolution;
-    }
+    private Double a,b,c;
+    private QuadraticFormulaResult result;
 
     void computeQuadraticFormulaSolutions(Double a, Double b, Double c) {
-        checkFactorEquality(a,b,c);
-        QuadraticFormula quadraticFormula = new QuadraticFormula(a,b,c);
-        try {
+        if(this.a == null){
+            this.a = a;
+            this.b = b;
+            this.c = c;
+            QuadraticFormula quadraticFormula = new QuadraticFormula(a,b,c);
             result = quadraticFormula.getQuadraticFormulaSolutions();
-            saveSolution = "Rozwiązania to: " + result.getX1() + " and " + result.getX2();
-        } catch (Exception e) {
-            saveSolution = "Brak rozwiązania w zbiorze liczb rzeczywistych";
         }
-    }
-
-    void getQuadraticFormulaSolutions(){
-
+        if(this.a.equals(a) && this.b.equals(b) && this.c.equals(c)){
+            System.out.format("Proxy: Rozwiązania to: %5.3f and %5.3f", result.getX1(), result.getX1());
+        }
+        else{
+            this.a = a;
+            this.b = b;
+            this.c = c;
+            QuadraticFormula quadraticFormula = new QuadraticFormula(a,b,c);
+            result = quadraticFormula.getQuadraticFormulaSolutions();
+            System.out.format("Nowy obiekt: Rozwiązania to: %5.3f and %5.3f", result.getX1(),  result.getX2());
+        }
     }
 
 }

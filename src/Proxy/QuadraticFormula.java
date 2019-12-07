@@ -3,7 +3,7 @@ package Proxy;
 public class QuadraticFormula {
     private Double a,b,c;
 
-    public QuadraticFormula(Double a, Double b, Double c) {
+    QuadraticFormula(Double a, Double b, Double c) {
         this.a = a;
         this.b = b;
         this.c = c;
@@ -21,10 +21,10 @@ public class QuadraticFormula {
         return (-b  +Math.sqrt(delta))/(2*a);
     }
 
-     QuadraticFormulaResult getQuadraticFormulaSolutions() throws Exception{
+     QuadraticFormulaResult getQuadraticFormulaSolutions(){
         Double delta = computeDelta();
         if(delta < 0){
-            throw new Exception("Delta ujemna");
+            System.out.println("\nBrak rozwiązania w zbiorze liczb rzeczywistych");
         }
         return new QuadraticFormulaResult(computeX1(delta),computeX2(delta));
     }
