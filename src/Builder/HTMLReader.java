@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class RTFReader {
+public class HTMLReader {
     private TextConverter bulider;
 
     public void setBulider(TextConverter bulider) {

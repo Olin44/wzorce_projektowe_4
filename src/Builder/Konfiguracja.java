@@ -3,8 +3,6 @@ package Builder;
 public class Konfiguracja {
     static TextConverter getConverter(String name){
         switch (name){
-            case "PlainASCII":
-                return new PlainASCIIConverter();
             case "RemoveTag_ContentToUpperCase":
                 return new RemoveTag_ContentToUpperCaseConverter();
             case "TagContentToUpperCase":

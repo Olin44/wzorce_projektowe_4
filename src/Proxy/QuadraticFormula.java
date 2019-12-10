@@ -23,9 +23,6 @@ public class QuadraticFormula {
 
      QuadraticFormulaResult getQuadraticFormulaSolutions(){
         Double delta = computeDelta();
-        if(delta < 0){
-            System.out.println("\nBrak rozwiązania w zbiorze liczb rzeczywistych");
-        }
         return new QuadraticFormulaResult(computeX1(delta),computeX2(delta));
     }
 }
